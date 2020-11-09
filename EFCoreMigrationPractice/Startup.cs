@@ -30,7 +30,7 @@ namespace EFCoreMigrationPractice
             services.AddControllers();
             services.AddSwaggerGen();
             services.AddDbContext<CompanyDbContext>(options =>
-                options.UseMySql("server=localhost;user=root;password=123456;database=company"));
+                options.UseMySql(Configuration.GetConnectionString("DefaultConnection"))); 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
